@@ -1,7 +1,5 @@
 import './style.css';
-import "./coder";
-
-import { Triangle } from './triangle';
+import BankAccount from './bankAccount';
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = ``;
 
@@ -9,11 +7,14 @@ type stringOrNumber = string | number | boolean;
 
 const logMsg = (msg: stringOrNumber) => { console.log(msg); };
 
-const triangle = new Triangle(25, 25);
+const account1 = new BankAccount("Dude", 12000);
+const account2 = new BankAccount("Rock", 3500);
 
-let area = triangle.getTriangleArea();
-let hyp = triangle.getTriangleHypotenuse();
+account1.makeDeposit(10000, new Date(new Date().getTime()).toLocaleString(), "Friend paid me back");
+account1.makeWithdrawal(1200, new Date(new Date().getTime()).toLocaleString(), "Rent payment");
 
-logMsg(area);
-logMsg(hyp);
-logMsg(triangle instanceof Triangle);
+account2.makeDeposit(5200, new Date(new Date().getTime()).toLocaleString(), "Friend paid me back");
+account2.makeWithdrawal(9000, new Date(new Date().getTime()).toLocaleString(), "Rent payment");
+
+logMsg(account1.getAccountHistory());
+logMsg(account2.getAccountHistory());
