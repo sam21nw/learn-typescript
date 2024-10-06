@@ -1,6 +1,11 @@
-import Circle from './circle';
 import './style.css';
+import User from './user';
 
-let c1 = new Circle(23, "red");
 
-console.log(c1);
+const user = new User("Dude", "Rock");
+
+console.log(user);
+
+user.fullName = "Ted Lasso";
+
+console.log(user);
