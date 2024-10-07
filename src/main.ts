@@ -1,11 +1,7 @@
 import './style.css';
-import User from './user';
+import person from './person';
 
+// console.log(person);
+// console.log(person.sing());
 
-const user = new User("Dude", "Rock");
-
-console.log(user);
-
-user.fullName = "Ted Lasso";
-
-console.log(user);
+console.log(this);
